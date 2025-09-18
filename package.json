@@ -1,0 +1,19 @@
+{
+  "name": "discord-reminder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.0",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250918.0",
+    "@types/node": "^24.5.2",
+    "typescript": "^5.9.2",
+    "wrangler": "^4.37.1"
+  }
+}

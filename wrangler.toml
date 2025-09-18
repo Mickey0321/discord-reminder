@@ -1,0 +1,13 @@
+name = "discord-reminder"
+main = "src/worker.ts"
+compatibility_date = "2025-09-18"
+
+[triggers]
+crons = ["0 12 * * 1-5"]  # 平日21:00 JST
+
+[vars]
+DEFAULT_MESSAGE = "⏰ 21:00です。今日の出勤フォームの入力をお願いします。"
+# MENTION_USERS = ""
+MENTION_ROLES = "1418211829414363207"
+# everyoneしたい猛者だけ↓
+# ENABLE_EVERYONE = "0"  # "1"で有効

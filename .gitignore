@@ -1,0 +1,12 @@
+# Node
+node_modules/
+
+# Cloudflare Wrangler
+.wrangler/
+
+# その他
+dist/
+build/
+.env
+.env.local
+.dev.vars
