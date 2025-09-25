@@ -23,7 +23,7 @@ REMIND_CONFIG = """
   },
   {
     "cron": "55 11 1 * *",
-    "message": "月初リマインド: 経費精算・締め処理の確認をお願いします。",
+    "message": "1ヶ月分の勤怠フォームの確認をお願いします｡",
     "users": [],
     "roles": ["1418211829414363207"],
     "everyone": "0"
@@ -31,6 +31,7 @@ REMIND_CONFIG = """
 ]
 """
 
+# 2) グローバル既定（個別定義が空のときに使用）
 MENTION_USERS = ""            # "id1,id2"
 MENTION_ROLES = ""            # "role1,role2"
 ENABLE_EVERYONE = "0"         # "1" で @everyone 許可
