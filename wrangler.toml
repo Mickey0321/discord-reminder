@@ -3,11 +3,35 @@ main = "src/worker.ts"
 compatibility_date = "2025-09-18"
 
 [triggers]
-crons = ["0 12 * * 1-5"]  # 平日21:00 JST
+# JST23:14 は UTC14:14。平日と毎月1日を併記
+crons = [
+  "55 11 * * 2-6",
+  "55 11 1 * *"
+]
 
 [vars]
-DEFAULT_MESSAGE = "⏰ 21:00です。今日の出勤フォームの入力をお願いします。"
-# MENTION_USERS = ""
-MENTION_ROLES = "1418211829414363207"
-# everyoneしたい猛者だけ↓
-# ENABLE_EVERYONE = "0"  # "1"で有効
+# 1) リマインド定義（cronごとに文面とメンションを設定）
+#   users/roles は Discord の ID。everyone は "1" で許可。
+REMIND_CONFIG = """
+[
+  {
+    "cron": "55 11 * * 2-6",
+    "message": "⏰ 20:50です。今日の出勤フォームの入力をお願いします。",
+    "users": [],
+    "roles": ["1418211829414363207"],
+    "everyone": "0"
+  },
+  {
+    "cron": "55 11 1 * *",
+    "message": "月初リマインド: 経費精算・締め処理の確認をお願いします。",
+    "users": [],
+    "roles": ["1418211829414363207"],
+    "everyone": "0"
+  }
+]
+"""
+
+MENTION_USERS = ""            # "id1,id2"
+MENTION_ROLES = ""            # "role1,role2"
+ENABLE_EVERYONE = "0"         # "1" で @everyone 許可
+TRIGGER_TOKEN = "dev"         # 手動送信用の簡易トークン
